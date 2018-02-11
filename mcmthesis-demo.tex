@@ -35,7 +35,7 @@
 \usepackage{lipsum}
 \usepackage{verbatim}
 
-\title{Prediction of languange distribution \MCMversion}
+\title{Prediction of languange distribution}
 
 \date{\today}
 \begin{document}
@@ -46,7 +46,7 @@ And at last, due to the changing nature of global communcation, in order to save
 The results is to suggest the company whether open six office or not.
 
 
-We first model the trend of number of native speaker based grey prediction model, forecast the change of distribution.
+We first model the trend of number of native speaker based Fuzzy Synthetic Evaluation Model, forecast the change of distribution.
 
 Secondly, we define some useful index
 
@@ -54,10 +54,10 @@ Thirdly, we test the model by using his torical data, we give the criterion that
 As well as we note that the model's strength and weaknesses, which can only refer limited years and the model's creditability would decrease as the time through.
 
 
-Finally, the model would be detacted by real result 
+Finally, the model would be detected using the real results.
 
 \begin{keywords}
-Population; Native speaker ; Grey prediction model
+Population; Native speaker ; Fuzzy Synthetic Evaluation Model
 \end{keywords}
 \end{abstract}
 \maketitle
@@ -84,9 +84,10 @@ On the other hand, considering the people in these places who can speak more the
 main targets to employ. The distribution of number of languages used can be review.
  
  
-According to the study 
 
-The total number of speaker is mainly affected by the population growth. The following graph shows the relationship bewteen number of speaker and the population
+
+
+The total number of speaker is mainly affected by the population growth. The following graph shows the relationship between number of speaker and the population
 
 
 We focus exclusively on the second definition.
@@ -134,7 +135,7 @@ The proof of theorem.
 We will use the symbols that given in the following table.
 \begin{table}
 \begin{center}
-\begin{tabular}{c|l}
+\begin{tabular}{c l}
 \hline
 \multicolumn{1}{l}{Variable} & Description                                      \\
 \hline
@@ -150,55 +151,43 @@ Ex                            & Export (dollar)                                 
 \end{center}
 \end{table}
 \subsection{The model idea}
-\qquad Due to the lack of data for the number of native speaker, we consider the grey prediction model to simulate the growth of speakers in the next 50 years.
+\qquad Due to the lack of data for the number of native speaker, we consider the Fuzzy Synthetic Evaluation Model to simulate the growth of speakers in the next 50 years.
 As we have found the factor of native speaker's growth has a strong relation with population growth of the countries which take it as official language.
 
-
-After the calculation of the grey prediction model, we obtain the global distribution of all total different languages speakers. Then we established economic model to choose the place to open a office.
-The model cosider the business effect and the profits that the company may receive.
-
-
-\subsection{Growth of native speaker model}
-\qquad We build up this model based on grey prediction model
-\begin{table}
+We construct this model because it's a command evaluation method to reserve the mainly influence factor. Which affect the countries influences in the future. The factor can be divided at three part in this problem,
+native speaker, economy and social culture. Those factors are difficule defined as actual value directly. So as to evaluate, we have secondary indicator, 
+using second-level fuzzy syntheic evaluation model. We divide each factors in futher detail. The table will be listed in the followiing:
+\begin{table}[h]
 \begin{center}
 {\hspace{-1in}
-\begin{minipage}{\textwidth}
+
 \fontsize{10}{12}\selectfont
-\begin{tabular}[c]{lrrrrrr}
+\begin{tabular}{c c}
 \toprule
-              & \multicolumn{2}{c}{1900} & \multicolumn{2}{c}{1906} & \multicolumn{2}{c}{1910}\\
-\cmidrule(r){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
-Party         & \% of Vote  & Seats Won  & \% of Vote  & Seats Won  & \% of Vote  & Seats Won \\
+\textbf{Primary indicator}     & \textbf{Secondary indicator}    \\
 \midrule
-\addlinespace
-              & \multicolumn{6}{c}{Provincial Assembly}\\
-\cmidrule{2-7}
-Conservative  & 35.6        &  47        & 26.0        & 37         & 30.9        & 52\\
-Socialist     & 12.4        &  18        & 27.1        & 44         & 24.8        & 39\\
-Christian Democrat & 49.2   &  85        & 41.2        & 68         & 39.2        & 59\\
-Other         & 2.8         &  0         & 5.7         & 1          & 5.1         & 0\\
-\addlinespace
-Total& 100.0       &  150       & 100.0       & 150        & 100.0       & 150\\
-\addlinespace
-              & \multicolumn{6}{c}{National Assembly}\\
-\cmidrule{2-7}
-Conservative  & 32.6        &   4        & 23.8        &  3         & 28.3        & 3\\
-Socialist     & 13.5        &   1        & 27.3        &  3         & 24.1        & 2\\
-Christian Democrat & 52.0   &   7        & 42.8        &  6         & 46.4        & 8\\
-Other         & 1.8         &   0        & 6.1         &  0         & 1.2         & 0\\
-\addlinespace
-Total& 100.0       &  12        & 100.0       & 12         & 100.0       & 13\\
+
+Native speaker & Number of native speakers  \\
+
+\hline
+
+\multirow{2}{*}{Economy}    & GDP \\
+ &FDI net \\
+
+\hline
+
+\multirow{3}{*}{Social culture} &  Number of official language school \\
+ &Immigration \\
+ &Language on internet \\
+
 \bottomrule
 \end{tabular}
-\end{minipage}
-}
-\caption[Elections in G\"{o}tefrith province, 1900--1910]{Elections in
-  G\"{o}tefrith province, 1900--1910.  (Taken from \cite{chicago},
-  pg.~414.)}%
-\label{tab:chicago-table}
+
+\caption[System of language development indicator of each country's index}
 \end{center}
 \end{table}
+
+
 
 
 
@@ -248,6 +237,90 @@ $
 \section{Validating the Model}
 \subsubsection{The influences of the model}
 \qquad We use the contral variable method
+\begin{table}
+\begin{center}
+{\hspace{-1in}
+
+\fontsize{10}{12}\selectfont
+\begin{minipage}{\textwidth}
+\begin{tabular}[c]{c c c c}
+\toprule
+\multirow{2}{*}{Primary indicator} & Weight of primary    & \multirow{2}{*}{Secondary indicator} &  Weight of secondary       \\
+ & indicator & & indicator \\
+\addlinespace
+\toprule
+\addlinespace
+Native speaker & 0.5 & Number of native speakers & 0.2 \\
+\addlinespace
+\hline
+\addlinespace
+\multirow{2}{*}{Economy}    & \multirow{2}{*}{0.2} & GDP &  0.3\\
+ & & FDI net & 0.2\\
+\addlinespace
+\hline
+ \addlinespace
+\multirow{3}{*}{Social culture} & \multirow{3}{*}{0.4} &  Number of official language school &  0.1\\
+ & &Immigration & 0.05\\
+
+ & &Language on internet &0.09\\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+}\caption[Elections in G\"{o}tefrith province, 1900--1910]{Elections in
+  G\"{o}tefrith province, 1900--1910.  (Taken from \cite{chicago},
+  pg.~414.)}%
+\label{tab:chicago-table}
+\end{center}
+\end{table}
+
+
+After the calculation of the Fuzzy Synthetic Evaluation Model, we obtain the global distribution of all total different languages speakers. Then we established economic model to choose the place to open a office.
+The model cosider the business effect and the profits that the company may receive.
+
+
+\subsection{Growth of native speaker model}
+\qquad We build up this model based on Fuzzy Synthetic Evaluation Model
+\begin{table}
+\begin{center}
+{\hspace{-2in}
+\begin{minipage}{\textwidth}
+\fontsize{10}{12}\selectfont
+\begin{tabular}[c]{lrrrrrr}
+\toprule
+              & \multicolumn{2}{c}{1900} & \multicolumn{2}{c}{1906} & \multicolumn{2}{c}{1910}\\
+\cmidrule(r){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
+Party         & \% of Vote  & Seats Won  & \% of Vote  & Seats Won  & \% of Vote  & Seats Won \\
+\midrule
+\addlinespace
+              & \multicolumn{6}{c}{Provincial Assembly}\\
+\cmidrule{2-7}
+Conservative  & 35.6        &  47        & 26.0        & 37         & 30.9        & 52\\
+Socialist     & 12.4        &  18        & 27.1        & 44         & 24.8        & 39\\
+Christian Democrat & 49.2   &  85        & 41.2        & 68         & 39.2        & 59\\
+Other         & 2.8         &  0         & 5.7         & 1          & 5.1         & 0\\
+\addlinespace
+Total& 100.0       &  150       & 100.0       & 150        & 100.0       & 150\\
+\addlinespace
+              & \multicolumn{6}{c}{National Assembly}\\
+\cmidrule{2-7}
+Conservative  & 32.6        &   4        & 23.8        &  3         & 28.3        & 3\\
+Socialist     & 13.5        &   1        & 27.3        &  3         & 24.1        & 2\\
+Christian Democrat & 52.0   &   7        & 42.8        &  6         & 46.4        & 8\\
+Other         & 1.8         &   0        & 6.1         &  0         & 1.2         & 0\\
+\addlinespace
+Total& 100.0       &  12        & 100.0       & 12         & 100.0       & 13\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+}
+\caption[Elections in G\"{o}tefrith province, 1900--1910]{Elections in
+  G\"{o}tefrith province, 1900--1910.  (Taken from \cite{chicago},
+  pg.~414.)}%
+\label{tab:chicago-table}
+\end{center}
+\end{table}
 
 \section{Conclusions}
 
@@ -286,7 +359,7 @@ wherever is stable.
 \end{center}
 \textbf {To}: Chief Operating Officer \\
 \textbf {From}: Team \#84802 \\
-\textbf {Subject}: The best place to open office \\
+\textbf {Subject}: The best location to open office \\
 \textbf {Date}: February 13,2018 \\
 \noindent\rule[0.25\baselineskip]{\textwidth}{1pt}
 \paragraph{} 
