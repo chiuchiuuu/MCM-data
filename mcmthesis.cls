@@ -227,14 +227,15 @@
 \fi}
 \newcommand{\MCM@maketitle}{%
   \begin{center}%
-  \let \footnote \thanks
+  \let \footnote  \thanks
     {\LARGE \@title \par}%
     \vskip 1.5em%
     {\large
       \lineskip .5em%
-      \begin{tabular}[t]{c}%
-        \@author
-      \end{tabular}\par}%
+  %  \begin{tabular}[t]{c}%
+   %    \@author
+ %   \end{tabular}
+}%
     \vskip 1em%
     {\large \@date}%
   \end{center}%

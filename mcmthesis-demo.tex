@@ -1,31 +1,3 @@
-%%
-%% This is file `mcmthesis-demo.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% mcmthesis.dtx  (with options: `demo')
-%% 
-%% -----------------------------------
-%% 
-%% This is a generated file.
-%% 
-%% Copyright (C)
-%%     2010 -- 2015 by Zhaoli Wang
-%%     2014 -- 2016 by Liam Huang
-%% 
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%% 
-%% This work has the LPPL maintenance status `maintained'.
-%% 
-%% The Current Maintainer of this work is Liam Huang.
-%% 
 \documentclass{mcmthesis}
 \mcmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
         tcn = 84802, problem = B,
@@ -48,7 +20,7 @@ The results is to suggest the company whether open six office or not.
 
 We first model the trend of number of native speaker based Fuzzy Synthetic Evaluation Model, forecast the change of distribution.
 
-Secondly, we define some useful index
+Secondly, we simulate the trend of migration by using Markov Chain Model. 
 
 Thirdly, we test the model by using his torical data, we give the criterion that percentage difference should be under 5\%
 As well as we note that the model's strength and weaknesses, which can only refer limited years and the model's creditability would decrease as the time through.
@@ -57,7 +29,7 @@ As well as we note that the model's strength and weaknesses, which can only refe
 Finally, the model would be detected using the real results.
 
 \begin{keywords}
-Population; Native speaker ; Fuzzy Synthetic Evaluation Model
+Population; Native speaker ; Fuzzy Synthetic Evaluation Model : Markov Chain Model
 \end{keywords}
 \end{abstract}
 \maketitle
@@ -84,6 +56,11 @@ On the other hand, considering the people in these places who can speak more the
 main targets to employ. The distribution of number of languages used can be review.
  
  
+According to the study \cite{hel},\emph{"For a company entering a new market, language can be a major barrier that firms
+may underestimate(Freeman and Sandwell 2008),and understanding language influence across different markets is important for international companies.)" }
+The sentence above shows the relation between economic development and languange distribution. As we know, the quality of the service demands variety of the languages in the world.
+The country which attract more tourist visiting , the more understanding and acceptable of foreign language. 
+That's how the top service company can earn more profits from others.
 
 
 
@@ -124,8 +101,10 @@ We focus exclusively on the second definition.
 \subsection{Key point analysis}
 \subsubsection{Analysis of prediction of native speaker growth}
 
-\subsubsection{Analysis of prediction of native speaker growth}
-
+\subsubsection{Analysis of prediction of the emigration percentage between countries}
+The second prdiction is based on the data of Emigration, and we set the model that country to country, and use the percentage of the emigration to 
+form a probability model.According to a study\cite{tec} \emph{"It is a quantitative description of the application of Markov
+mode on the migration"} We note that the trend of emigration is avalible to apply for Markov Chain Model. 
 
 \begin{proof}
 The proof of theorem.
@@ -133,7 +112,7 @@ The proof of theorem.
 \section{The models}
 \subsection{Notations}
 We will use the symbols that given in the following table.
-\begin{table}
+\begin{table}[h]
 \begin{center}
 \begin{tabular}{c l}
 \hline
@@ -142,6 +121,7 @@ We will use the symbols that given in the following table.
 $L_i$                            & Number of first(second,third or above) language (i=1 for first,etc)                                       \\
 Eg                           &Number of Emigration                                       \\
 Ig                           &Number Immigration \\
+$\ell_{ij}   $                       &The percentage of emigration from Country i to Country j                                         \\
 P                            & Population                                \\
 $P_{GDP}   $                         & Per Capita GDP                                   \\
 Im                            & Import (dollar)                                       \\
@@ -150,31 +130,33 @@ Ex                            & Export (dollar)                                 
 \end{tabular}
 \end{center}
 \end{table}
+
 \subsection{The model idea}
 \qquad Due to the lack of data for the number of native speaker, we consider the Fuzzy Synthetic Evaluation Model to simulate the growth of speakers in the next 50 years.
 As we have found the factor of native speaker's growth has a strong relation with population growth of the countries which take it as official language.
 
-We construct this model because it's a command evaluation method to reserve the mainly influence factor. Which affect the countries influences in the future. The factor can be divided at three part in this problem,
+\subsection{Fuzzy Synthetic Evaluation Model}
+
+\qquad We construct this model because it's a command evaluation method to reserve the mainly influence factor. Which affect the countries influences in the future. The factor can be divided at three part in this problem,
 native speaker, economy and social culture. Those factors are difficule defined as actual value directly. So as to evaluate, we have secondary indicator, 
 using second-level fuzzy syntheic evaluation model. We divide each factors in futher detail. The table will be listed in the followiing:
 \begin{table}[h]
 \begin{center}
-{\hspace{-1in}
+\hspace{-1in}
 
 \fontsize{10}{12}\selectfont
-\begin{tabular}{c c}
+\setlength{\tabcolsep}{10mm} 
+\begin{tabular}{l l}
 \toprule
 \textbf{Primary indicator}     & \textbf{Secondary indicator}    \\
 \midrule
+\addlinespace
 
 Native speaker & Number of native speakers  \\
-
-\hline
-
-\multirow{2}{*}{Economy}    & GDP \\
- &FDI net \\
-
-\hline
+\addlinespace
+\multirow{2}{*}{Economy}    & GDP(Gross domestic product) \\
+ &FDI(Foreign Direct Investment)\\
+\addlinespace
 
 \multirow{3}{*}{Social culture} &  Number of official language school \\
  &Immigration \\
@@ -183,13 +165,18 @@ Native speaker & Number of native speakers  \\
 \bottomrule
 \end{tabular}
 
-\caption[System of language development indicator of each country's index}
+\caption{System of language development indicator of each country's index}
+\label{tab:chicago-table}
 \end{center}
 \end{table}
+\\
+ \qquad As we have constructed a model, there are 3 step to us to quantify the data shown above.
 
+\paragraph {Step 1:} Define 
 
+\paragraph {Step 1:} asd
 
-
+\paragraph {Step 1:}asd
 
 \begin{figure}[h]
 \small
@@ -199,19 +186,10 @@ Native speaker & Number of native speakers  \\
 \end{figure}
 
 \eqref{aa}
+
 \begin{equation}
 a^2 \label{aa}
 \end{equation}
-
-$
-  \begin{pmatrix}{*{20}c}
-  {a_{11} } & {a_{12} } & {a_{13} }  \\
-  {a_{21} } & {a_{22} } & {a_{23} }  \\
-  {a_{31} } & {a_{32} } & {a_{33} }  \\
-  \end{pmatrix}
-  = \frac{{Opposite}}{{Hypotenuse}}\cos ^{ - 1} \theta \arcsin \theta
-$
-
 
 \[
   p_{j}=\begin{cases} 0,&\text{if $j$ is odd}\\
@@ -230,8 +208,20 @@ $
 \]
 \subsubsection{The model result}
 
-\section{Calculating and Simplifying the Model }
+\subsection{Markov Chain Model}
+We can have the following model based on the data
+\begin{equation}
+  \begin{pmatrix}
+  {\ell_{11} } & {\ell_{12} } & \cdots &{\ell_{1n} }  \\
+  {\ell_{21} } & {\ell_{22} } & \cdots & {\ell_{2n} }  \\
+  {\vdots } &  {\vdots }  & \ddots &   \vdots \\
+  {\ell_{11} } & {\ell_{12} } & \cdots &{\ell_{nn} }  \\
+  \end{pmatrix}
+  \qquad \sum^n_{i=1}=\ell_{ij}=1 \qquad (j=1,2,\cdots,n)
+\end{equation}
 
+
+\section{Calculating and Simplifying the Model }
 
 
 \section{Validating the Model}
@@ -255,7 +245,7 @@ Native speaker & 0.5 & Number of native speakers & 0.2 \\
 \hline
 \addlinespace
 \multirow{2}{*}{Economy}    & \multirow{2}{*}{0.2} & GDP &  0.3\\
- & & FDI net & 0.2\\
+ & & FDI & 0.2\\
 \addlinespace
 \hline
  \addlinespace
@@ -284,7 +274,7 @@ The model cosider the business effect and the profits that the company may recei
 \qquad We build up this model based on Fuzzy Synthetic Evaluation Model
 \begin{table}
 \begin{center}
-{\hspace{-2in}
+{\hspace{-1in}
 \begin{minipage}{\textwidth}
 \fontsize{10}{12}\selectfont
 \begin{tabular}[c]{lrrrrrr}
@@ -304,7 +294,7 @@ Other         & 2.8         &  0         & 5.7         & 1          & 5.1       
 Total& 100.0       &  150       & 100.0       & 150        & 100.0       & 150\\
 \addlinespace
               & \multicolumn{6}{c}{National Assembly}\\
-\cmidrule{2-7}
+\cmidrule{1-7}
 Conservative  & 32.6        &   4        & 23.8        &  3         & 28.3        & 3\\
 Socialist     & 13.5        &   1        & 27.3        &  3         & 24.1        & 2\\
 Christian Democrat & 52.0   &   7        & 42.8        &  6         & 46.4        & 8\\
@@ -386,15 +376,3 @@ some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
 
 \end{document}
 
-%% 
-%% This work consists of these files mcmthesis.dtx,
-%%                                   figures/ and
-%%                                   code/,
-%% and the derived files             mcmthesis.cls,
-%%                                   mcmthesis-demo.tex,
-%%                                   README,
-%%                                   LICENSE,
-%%                                   mcmthesis.pdf and
-%%                                   mcmthesis-demo.pdf.
-%%
-%% End of file `mcmthesis-demo.tex'.
