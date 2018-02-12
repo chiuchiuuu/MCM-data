@@ -1,5 +1,5 @@
 \documentclass{mcmthesis}
-\mcmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
+\mcmsetup{CTeX = false,
         tcn = 84802, problem = B,
         sheet = true, titleinsheet = true, keywordsinsheet = true,
         titlepage = true, abstract = true}
@@ -26,7 +26,7 @@ Secondly, we simulate the trend of migration by using Markov Chain Model.
 Thirdly, we test the model by using his torical data, we give the criterion that percentage difference should be under 5\%
 As well as we note that the model's strength and weaknesses, which can only refer limited years and the model's creditability would decrease as the time through.
 
-
+·
 Finally, the model would be detected using the real results.
 
 \begin{keywords}
@@ -85,9 +85,7 @@ We focus exclusively on the second definition.
 \begin{equation}\int^x_\infty x \mathrm{d}F_\iota(x)
 \end{equation}
 \end{Theorem}
-\begin{Lemma} \label{thm:tex}
-\TeX .
-\end{Lemma}
+
 \section{Analysis of the Problem}
 \subsection{Overall analysis}
 
@@ -97,14 +95,11 @@ The trend of the emigration reviews the trend of language distribution in the ne
 \subsubsection{Analysis of prediction of native speaker growth}
 
 \subsubsection{Analysis of prediction of the emigration percentage between countries}
-The second prdiction is based on the data of Emigration, and we set the model that country to country, and use the percentage of the emigration to 
+\qquad The second prdiction is based on the data of Emigration, and we set the model that country to country, and use the percentage of the emigration to 
 form a probability model.According to a study\cite{tec} \emph{"It is a quantitative description of the application of Markov
-mode on the migration"} We note that the trend of emigration is avalible to apply for Markov Chain Model. Trend only depand on the next data but not earlier. 
-The emmigration should satisfy the Markov Chain
+mode on the migration"} We note that the trend of emigration is avalible to apply for Markov Chain Model.  
+The emmigration should satisfy the Markov Chain conditions which is trend only depand on the next data but not earlier.
 
-\begin{proof}
-The proof of theorem.
-\end{proof}
 \section{The models}
 \subsection{Notations}
 We will use the symbols that given in the following table.
@@ -116,8 +111,7 @@ We will use the symbols that given in the following table.
 \hline
 $L_i$                            & Number of first(second,third or above) language (i=1 for first,etc)                                       \\
 $ Eg_i  $                         &Number of Emigration of country i                                      \\
-Ig                           &Number Immigration \\
-$\delta $                      & Death rate of country j in a year\\
+$ Ig_i  $                     &Number of Immigration of country i\\
 $\ell_{ij}   $                       &The percentage of emigration from Country i to Country j                                         \\
 P                            & Population                                \\
 $P_{GDP}   $                         & Per Capita GDP                                   \\
@@ -201,7 +195,7 @@ a^2 \label{aa}
 Given that we have the data of population and emigration of each country, we are going to model the distribution and the trend 
 of the shifting population by country.
 \subsubsection{Futher assumptions}
-In this model, we assumpt that the
+In this model, we assumpt that the death rate are constant since there are no much data to prdict and ensure. 
 \subsubsection{Modelling}
 We can have the following model based on the data on 2017\\
 
@@ -243,7 +237,6 @@ In the following,
  \text{ The set of shifting population of country i to others in one year }= (X_{i} \cdot Eg_{i})P
 \end{equation}
 Where $X_{i}$ and $ Eg_{i}$ refer to the set of country population and Emigration.
-Considering the death rate would affect the total shifting population,  it is observe that can decrease the changing rate of population shifting.
 
 For forecasting the 50 years, the model construction world be like this.\\
 Let $V_i$ = The set of shifting population of country i in next 50 years (each year) 
@@ -262,7 +255,7 @@ V_i = \{(X_{i1} \cdot Eg_{i})P, (X_{i2} \cdot Eg_{i2})P^2, \cdots, (X_{i 50} \cd
 \end{equation}
 And we obtain the actual prediction on the distribution of emigration in next 50 year (each year).
 As for the immigration, 
-we let $P'=P (P'is the transpose of P)$, P’ reviews the percentage distribution of the country which from others.we can take the same action to establish the model.
+we let $P'=P $(P'is the transpose of P), P’ reviews the percentage distribution of the country which from others.we can take the same action to establish the model.
 We let the following Q for infinity of T', the reason is the same to the construction of P:
 \begin{displaymath}
 Q=\lim_{n \to \infty} T'
@@ -284,8 +277,26 @@ U_i = \{(X_{i1} \cdot Ig_{i})Q, (X_{i2} \cdot Ig_{i2})Q^2, \cdots, (U_{i 50} \cd
 
 After finishing the model, we obtain Matrix V and U , which is direcely indicate the flow of distribution of language in next 50 years.
 
-\subsection{Decision-Making Model for choosing the place }
-The place to build up an office by variety of lanuanges. 
+\subsection{Filtering Model for choosing the place }
+This model will be divieded at three filtering for the best 6 countries to open the office, 
+\subsubsection {First filtering}
+
+\subsubsection {Second filtering}
+
+\subsubsection {Third filtering}
+
+A good place for service company should consider the environmen, economy and policy towards investment.Refer to the essay \cite{eiu}, using the indicator 
+from questionnatire to evaluate whether the place is good for business or not. We construct the similar model by using a few data from the resources.
+The indicators of business place will be listed in the following:
+\begin{itemize}
+\item \textbf{GDP}\\
+GDP is one of most important factor that we consider, it affects the short term development of a country, which is a business index around the world.
+\item \textbf{Corporation taxes}\\
+Balancing the cost spend on taxex and the benefit, the problem that company should consider.
+\item \textbf{GDP's growth} \\
+GDP's growth indicates the long term development of a country, business affairs will be affected in the future.
+\end{itemize}
+These are the main factors influence the company's prospect. Our model are based on these three indicators to evaluate. 
 
 \section{Calculating and Simplifying the Model }
 \qquad We analysis how the factors affecting the influences of a countries,
@@ -322,10 +333,7 @@ Native speaker & 0.5 & Number of native speakers & 0.2 \\
 \end{tabular}
 \end{minipage}
 
-}\caption[Elections in G\"{o}tefrith province, 1900--1910]{Elections in
-  G\"{o}tefrith province, 1900--1910.  (Taken from \cite{chicago},
-  pg.~414.)}%
-\label{tab:chicago-table}
+}\caption{The weights of each indicator}%
 \end{center}
 \end{table}
 
@@ -346,7 +354,7 @@ Native speaker & 0.5 & Number of native speakers & 0.2 \\
 \end{figure}
 
 Figure 1 and 2 show how the influence change in the next 50 years. Refer to the figure, Chinese and English would dominate the futher, 
-and Chinese transcend English to be the world comment language in 2038 .
+and Chinese transcend English to become world common language in 2038. 
 
 \section{Validating the Model}
 \subsubsection{The influences of the model}
