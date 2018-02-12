@@ -7,6 +7,7 @@
 \usepackage{lipsum}
 \usepackage{verbatim}
 
+
 \title{Prediction of languange distribution}
 
 \date{\today}
@@ -69,22 +70,14 @@ The total number of speaker is mainly affected by the population growth. The fol
 
 We focus exclusively on the second definition.
 
-
-\begin{itemize}
-\item the angular velocity of the bat,
-\item the velocity of the ball, and
-\item the position of impact along the bat.
-\end{itemize}
-
-\emph{center of percussion} [Brody 1986],
-
 \subsection{Assumptions}
 \qquad The model is going to ignore unpredictable and high-impact occured, we have to make following assumptions to guarantee the correctness of the model.
 \begin{itemize}
 \item ensure the information is absolutely right, 
 \item the governments won't change the official language in their country,
 \item ignore the large-scale war, assume it won't break,
-\item the force over time that the hitter hands applies on the handle.
+\item assume the corporate taxes won't change,
+
 \end{itemize}
 
 
@@ -98,13 +91,16 @@ We focus exclusively on the second definition.
 \section{Analysis of the Problem}
 \subsection{Overall analysis}
 
+The trend of the emigration reviews the trend of language distribution in the next 50 years.
+
 \subsection{Key point analysis}
 \subsubsection{Analysis of prediction of native speaker growth}
 
 \subsubsection{Analysis of prediction of the emigration percentage between countries}
 The second prdiction is based on the data of Emigration, and we set the model that country to country, and use the percentage of the emigration to 
 form a probability model.According to a study\cite{tec} \emph{"It is a quantitative description of the application of Markov
-mode on the migration"} We note that the trend of emigration is avalible to apply for Markov Chain Model. 
+mode on the migration"} We note that the trend of emigration is avalible to apply for Markov Chain Model. Trend only depand on the next data but not earlier. 
+The emmigration should satisfy the Markov Chain
 
 \begin{proof}
 The proof of theorem.
@@ -119,8 +115,9 @@ We will use the symbols that given in the following table.
 \multicolumn{1}{l}{Variable} & Description                                      \\
 \hline
 $L_i$                            & Number of first(second,third or above) language (i=1 for first,etc)                                       \\
-Eg                           &Number of Emigration                                       \\
+$ Eg_i  $                         &Number of Emigration of country i                                      \\
 Ig                           &Number Immigration \\
+$\delta $                      & Death rate of country j in a year\\
 $\ell_{ij}   $                       &The percentage of emigration from Country i to Country j                                         \\
 P                            & Population                                \\
 $P_{GDP}   $                         & Per Capita GDP                                   \\
@@ -165,25 +162,17 @@ Native speaker & Number of native speakers  \\
 \bottomrule
 \end{tabular}
 
-\caption{System of language development indicator of each country's index}
-\label{tab:chicago-table}
+\caption{System of language development indicator of each country's influences}
 \end{center}
 \end{table}
 \\
  \qquad As we have constructed a model, there are 3 step to us to quantify the data shown above.
 
-\paragraph {Step 1:} Define 
+\paragraph {Step 1:} Define the weight of each indicator that associate the influences of a language
 
-\paragraph {Step 1:} asd
+\paragraph {Step 2:} 
 
-\paragraph {Step 1:}asd
-
-\begin{figure}[h]
-\small
-\centering
-\includegraphics[width=12cm]{mcmthesis-aaa.eps}
-\caption{dadasdasdd} \label{fig:aa}
-\end{figure}
+\paragraph {Step 3:}asd
 
 \eqref{aa}
 
@@ -209,8 +198,15 @@ a^2 \label{aa}
 \subsubsection{The model result}
 
 \subsection{Markov Chain Model}
-We can have the following model based on the data
-\begin{equation}
+Given that we have the data of population and emigration of each country, we are going to model the distribution and the trend 
+of the shifting population by country.
+\subsubsection{Futher assumptions}
+In this model, we assumpt that the
+\subsubsection{Modelling}
+We can have the following model based on the data on 2017\\
+
+\begin{displaymath}
+Let \quad T=
   \begin{pmatrix}
   {\ell_{11} } & {\ell_{12} } & \cdots &{\ell_{1n} }  \\
   {\ell_{21} } & {\ell_{22} } & \cdots & {\ell_{2n} }  \\
@@ -218,16 +214,84 @@ We can have the following model based on the data
   {\ell_{11} } & {\ell_{12} } & \cdots &{\ell_{nn} }  \\
   \end{pmatrix}
   \qquad \sum^n_{i=1}=\ell_{ij}=1 \qquad (j=1,2,\cdots,n)
+\end{displaymath}
+
+Matrix T refers to the distribution percentage of the emigration for each countries.
+And sum of each row is 1. Considering Markove Chain Model, notice that $T^n$ is upbounded for all integer n when
+the n is approaching to $\infty$, we obtain a stable Matrix P.
+\begin{displaymath}
+P=\lim_{n \to +\infty}T^n
+\end{displaymath}
+P satisfied the following conditions.
+\begin{displaymath}
+P=
+  \begin{pmatrix}
+  {p_{11} } & {p_{12} } & \cdots &{p_{1n} }  \\
+  {p_{21} } & {p_{22} } & \cdots & {p_{2n} }  \\
+  {\vdots } &  {\vdots }  & \ddots &   \vdots \\
+  {p_{11} } & {p_{12} } & \cdots &{p_{nn} }  \\
+  \end{pmatrix}
+  \qquad \sum^n_{i=1}=p_{ij}=1 \qquad (j=1,2,\cdots,n)
+\end{displaymath}
+\qquad And P is the patterns of distribution for emigration to each countries in future.
+
+\subsubsection{Prdiction in next 50 year}
+When we get the trend above, we construct the model to descriebe the change within 50 years.
+In the following,
+
+\begin{equation}
+ \text{ The set of shifting population of country i to others in one year }= (X_{i} \cdot Eg_{i})P
+\end{equation}
+Where $X_{i}$ and $ Eg_{i}$ refer to the set of country population and Emigration.
+Considering the death rate would affect the total shifting population,  it is observe that can decrease the changing rate of population shifting.
+
+For forecasting the 50 years, the model construction world be like this.\\
+Let $V_i$ = The set of shifting population of country i in next 50 years (each year) 
+\begin{displaymath}
+V=\begin{pmatrix}
+  {V_{1} }  \\
+  {V_{2} }  \\
+  {\vdots } \\
+  {V_{n} }  \\
+  \end{pmatrix}
+\qquad  \text {n for the number of country}
+\end{displaymath}
+
+\begin{equation}
+V_i = \{(X_{i1} \cdot Eg_{i})P, (X_{i2} \cdot Eg_{i2})P^2, \cdots, (X_{i 50} \cdot Eg_{i 50})P^{50}\}
+\end{equation}
+And we obtain the actual prediction on the distribution of emigration in next 50 year (each year).
+As for the immigration, 
+we let $P'=P (P'is the transpose of P)$, P’ reviews the percentage distribution of the country which from others.we can take the same action to establish the model.
+We let the following Q for infinity of T', the reason is the same to the construction of P:
+\begin{displaymath}
+Q=\lim_{n \to \infty} T'
+\end{displaymath}
+After taking the limitation, total coming population of country i in one year can be written as $U_i$ vector form such as before we made.
+\begin{displaymath}
+U=\begin{pmatrix}
+  {U_{1} }  \\
+  {U_{2} }  \\
+  {\vdots } \\
+  {U_{n} }  \\
+  \end{pmatrix}
+\end{displaymath}
+By using the data of immigration of each country form each country, we can write down the following equation.
+
+\begin{equation}
+U_i = \{(X_{i1} \cdot Ig_{i})Q, (X_{i2} \cdot Ig_{i2})Q^2, \cdots, (U_{i 50} \cdot Ig_{i 50})Q^{50}\}
 \end{equation}
 
+After finishing the model, we obtain Matrix V and U , which is direcely indicate the flow of distribution of language in next 50 years.
+
+\subsection{Decision-Making Model for choosing the place }
+The place to build up an office by variety of lanuanges. 
 
 \section{Calculating and Simplifying the Model }
-
-
-\section{Validating the Model}
-\subsubsection{The influences of the model}
-\qquad We use the contral variable method
-\begin{table}
+\qquad We analysis how the factors affecting the influences of a countries,
+using the data from \cite{a}, we had let the weight of each factor in the 
+evaluation model shown in the following.
+\begin{table}[h]
 \begin{center}
 {\hspace{-1in}
 
@@ -244,12 +308,12 @@ Native speaker & 0.5 & Number of native speakers & 0.2 \\
 \addlinespace
 \hline
 \addlinespace
-\multirow{2}{*}{Economy}    & \multirow{2}{*}{0.2} & GDP &  0.3\\
+\multirow{2}{*}{Economy}    & \multirow{2}{*}{0.3} & GDP &  0.3\\
  & & FDI & 0.2\\
 \addlinespace
 \hline
  \addlinespace
-\multirow{3}{*}{Social culture} & \multirow{3}{*}{0.4} &  Number of official language school &  0.1\\
+\multirow{3}{*}{Social culture} & \multirow{3}{*}{0.2} &  Number of official language school &  0.1\\
  & &Immigration & 0.05\\
 
  & &Language on internet &0.09\\
@@ -265,14 +329,38 @@ Native speaker & 0.5 & Number of native speakers & 0.2 \\
 \end{center}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\small
+\includegraphics[width=7.5cm]{icf.jpg}
+\caption{Influences ranking prediction }
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\small
+\includegraphics[width=7.5cm]{icf2.jpg}
+\caption{Influences ranking prediction(ignore top 2)}
+\end{minipage}
+\end{figure}
+
+Figure 1 and 2 show how the influence change in the next 50 years. Refer to the figure, Chinese and English would dominate the futher, 
+and Chinese transcend English to be the world comment language in 2038 .
+
+\section{Validating the Model}
+\subsubsection{The influences of the model}
+\qquad We use the contral variable method
+
+
 
 After the calculation of the Fuzzy Synthetic Evaluation Model, we obtain the global distribution of all total different languages speakers. Then we established economic model to choose the place to open a office.
 The model cosider the business effect and the profits that the company may receive.
 
 
-\subsection{Growth of native speaker model}
-\qquad We build up this model based on Fuzzy Synthetic Evaluation Model
-\begin{table}
+\subsection{Growth of influences model}
+\qquad We build up this model based on Fuzzy Synthetic Evaluation Model, growing number of
+\begin{table}[h]
 \begin{center}
 {\hspace{-1in}
 \begin{minipage}{\textwidth}
@@ -365,7 +453,7 @@ wherever is stable.
 Here are simulation programmes we used in our model as follow.
 
 \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
-\lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+\lstinputlisting[language=Matlab]{./code/poly_forecast.m}
 
 \section{Second appendix}
 
